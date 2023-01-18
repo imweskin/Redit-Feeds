@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Redit-Feeds/static/css/main.a32def54.css",
+    "main.js": "/Redit-Feeds/static/js/main.9d4f1cee.js",
+    "static/media/icon.svg": "/Redit-Feeds/static/media/icon.83830e4393e6709d7ef7f8e2ed996d00.svg",
+    "index.html": "/Redit-Feeds/index.html",
+    "main.a32def54.css.map": "/Redit-Feeds/static/css/main.a32def54.css.map",
+    "main.9d4f1cee.js.map": "/Redit-Feeds/static/js/main.9d4f1cee.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a32def54.css",
+    "static/js/main.9d4f1cee.js"
+  ]
+}
