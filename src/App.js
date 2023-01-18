@@ -1,25 +1,45 @@
-import logo from './logo.svg';
+import {useState, useEffect} from 'react';
+import Article from './components/Article';
+import Header from './components/Header';
+
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const [articles, setArticles] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const searchArticles = async (subreddit) => {
+        fetch(`https://www.reddit.com/r/${subreddit}/.json`).then((res) => {
+
+            if(res.status !== 200) {
+                console.log("ERROR: could not fetch data");
+                return;
+            }
+
+            res.json().then(data => {
+                if(data != null) {
+                    setArticles(data.data.children);
+                }
+            });
+        })
+    };
+
+    useEffect( () => {
+        searchArticles('webdev');
+    }, []);
+
+    return (
+        <div className="app">
+            <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} searchArticles={searchArticles}/>
+
+            <div className="articles">
+                {articles != null ? articles.map((article, index) => (
+                    <Article key={index} article={article.data}/>
+                )) : "no articles found"}
+            </div>
+        </div>
+    );
 }
 
 export default App;

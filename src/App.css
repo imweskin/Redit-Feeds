@@ -1,38 +1,100 @@
-.App {
-  text-align: center;
+*,*::before,*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box  ;
+    font-family: montserrat, sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-header {
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.app-header .logo {
+    display: flex;
+    align-items: center;
 }
-
-.App-link {
-  color: #61dafb;
+.app-header .logo img {
+    margin-right: 8px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-header .logo h1 {
+    font-size: 23px;
+    font-weight: 600;
+}
+.app-header .input {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto 0;
+    background-color: #f6f7f8;
+    border: 1px solid #ccc;
+    outline: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    color: #333;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-style: italic;
+    transition: all 0.3s;
+}
+.app-header .input:hover {
+    border-color: #ff4500;
+}
+.articles {
+    padding: 30px 20px;
+}
+article {
+    border: 1px solid #ccc;
+    padding: 20px;  
+    margin-bottom: 20px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+article:hover {
+    background-color: #f6f7f8;
+}
+article h3 {
+    color: #ff4500;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+article p {
+    font-size: 16px;
+    margin-left: 8px;
+    font-weight: 500;
+}
+article a {
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    background-color: #ff4500;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+input::placeholder {
+    opacity: 1;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+input:focus::placeholder {
+    opacity: 0;
+}
+@media (max-width: 767px) {
+    article h3 {
+        font-size: 15px;
+    }
+    article p {
+        font-size: 14px;
+    }
+    article a {
+        font-size: 13px;
+    }
 }
